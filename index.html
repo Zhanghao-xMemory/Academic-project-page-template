@@ -304,25 +304,6 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -332,14 +313,43 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+Agent memory systems often adopt the standard Retrieval-Augmented Generation (RAG) pipeline, yet its underlying assumptions differ in this setting. RAG targets large, heterogeneous corpora where retrieved passages are diverse, whereas agent memory is a bounded, coherent dialogue stream with highly correlated spans that are often duplicates. Under this shift, fixed top-k similarity retrieval tends to return redundant context, and post-hoc pruning can delete temporally linked prerequisites needed for correct reasoning. We argue retrieval should move beyond similarity matching and instead operate over latent components, following decoupling to aggregation: disentangle memories into semantic components, organise them into a hierarchy, and use this structure to drive retrieval. We propose xMemory, which builds a hierarchy of intact units and maintains a
+searchable yet faithful high-level node organisation via a sparsity–semantics objective that guides memory split and merge. At inference, xMemory retrieves top-down, selecting a compact, diverse set of themes and semantics for multi-fact queries, and expanding to episodes and raw messages only when it reduces the reader’s uncertainty. Experiments on LoCoMo and PerLTQA across the three latest LLMs show consistent gains in answer quality and token efficiency.        
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End paper abstract -->
+
+
+<!-- Teaser Image-->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/intro_new.pdf" alt="An overview of our method"/>
+            <h2 class="subtitle has-text-centered">
+From similarity top-k to structured retrieval for agent memory. Agent memory forms a coherent and highly correlated stream, where many spans are near duplicates; similarity top-kretrieval can therefore collapse and retrieve redundant chunks. xMemory organises memories into a hierarchy of intact units and performs structure-aware retrieval to produce a shorter but more answer-sufficient context.
+            </h2>
+        </div>
+    </div>
+</section>
+<!-- End teaser Image -->
+
+<!-- Teaser Image-->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/methodology_new.pdf" alt="An overview of our method"/>
+            <h2 class="subtitle has-text-centered">
+Overview of xMemory. xMemory couples memory structuring with top-down retrieval to address the mismatch between agent memory and the RAG pipeline. It organises a coherent stream into a hierarchy that disentangles episodic traces into semantic components while preserving intact units. A sparsity–semantics objective guides split and merge to keep the high-level organisation searchable and faithful. At retrieval, xMemory selects a diverse set of relevant themes and semantics to support aggregation reasoning, then expands to episodes and raw messages only when they decrease the reader’s uncertainty, yielding a shorter context with stronger evidence coverage.
+            </h2>
+        </div>
+    </div>
+</section>
+<!-- End teaser Image -->
+
+
 
 
 <!-- Image carousel -->
